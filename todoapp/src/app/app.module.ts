@@ -1,6 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+//ngrx
+import { StoreModule } from '@ngrx/store';
+
 import { AppComponent } from './app.component';
 import { FooterComponent } from './footer/footer.component';
 import { TodoComponent } from './todo/todo.component';
@@ -20,7 +23,15 @@ import { TodoAddComponent } from './todo/todo-add/todo-add.component';
     TodoAddComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    StoreModule.forRoot(reducers, {
+      runtimeChecks: {
+        strictStateImmutability: true,
+        strictActionImmutability: true,
+        strictStateSerializability: true,
+        strictActionSerializability: true,
+      },
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent]
