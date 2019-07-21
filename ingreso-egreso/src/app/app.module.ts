@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { FormsModule} from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 //Firebase
 import { AngularFireModule } from '@angular/fire';
@@ -17,9 +17,9 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { IngresEgresoComponent } from './ingres-egreso/ingres-egreso.component';
-import { EstadisticaComponent } from './ingres-egreso/estadistica/estadistica.component';
-import { DetalleComponent } from './ingres-egreso/detalle/detalle.component';
+import { IngresoEgresoComponent } from './ingreso-egreso/ingreso-egreso.component';
+import { EstadisticaComponent } from './ingreso-egreso/estadistica/estadistica.component';
+import { DetalleComponent } from './ingreso-egreso/detalle/detalle.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { SidebarComponent } from './shared/sidebar/sidebar.component';
@@ -33,7 +33,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
     LoginComponent,
     RegisterComponent,
     DashboardComponent,
-    IngresEgresoComponent,
+    IngresoEgresoComponent,
     EstadisticaComponent,
     DetalleComponent,
     FooterComponent,
@@ -44,6 +44,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    ReactiveFormsModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
     AngularFirestoreModule,
