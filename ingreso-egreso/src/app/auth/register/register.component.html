@@ -55,7 +55,11 @@
               </div>
 
               <div class="form-group">
-                <button [disabled]="!formularioRegister.valid" class="btn btn-primary submit-btn btn-block">Crear cuenta</button>
+                <button *ngIf="!cargandoApp" [disabled]="!formularioRegister.valid" class="btn btn-primary submit-btn btn-block">Crear cuenta</button>
+                <button *ngIf="cargandoApp" [disabled]="true" class="btn btn-primary submit-btn btn-block">
+                        <i class="fas fa-spin fa-sync    "></i>
+                        Por favor espere...                      
+                  </button>
               </div>
               
               
