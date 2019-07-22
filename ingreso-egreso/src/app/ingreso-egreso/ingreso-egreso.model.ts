@@ -4,6 +4,7 @@ export class IngresoEgreso {
     descripcion: string;
     monto: number;
     tipo: string;
+    uid?: string;
 
     constructor(obj: DbIngresoEgreso) {
         this.descripcion = obj && obj.descripcion || null;
@@ -16,4 +17,5 @@ interface DbIngresoEgreso {
     descripcion: string;
     monto: number;
     tipo: string;
+    uid?: string;
 }
