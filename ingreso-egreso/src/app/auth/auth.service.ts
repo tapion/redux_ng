@@ -20,19 +20,19 @@ export class AuthService {
   private infoUsuario: User = new User(null);
 
   constructor(public afAuth: AngularFireAuth,
-    public router: Router,
-    public afDB: AngularFirestore,
+              public router: Router,
+              public afDB: AngularFirestore,
     public store: Store<AppState>) { }
 
-  crearUsuario(nombre: string, email: string, password: string) {
+  crearUsuario(nombreUsr: string, email: string, password: string) {
     this.store.dispatch(new ActivarLoadingAction());
     this.afAuth.auth.createUserWithEmailAndPassword(email, password)
       .then(resp => {
         const user: User = {
-          nombre: nombre,
+          nombre: nombreUsr,
           email: resp.user.email,
           uid: resp.user.uid
-        }
+        };
 
         this.afDB.doc(`${user.uid}/usuario`)
           .set(user)
